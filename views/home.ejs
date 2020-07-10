@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title><%= title%></title>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <div id="contact-container">
+            <div id="page-heading"><div>My Contact List</div></div>
+            <br>
+            <ul>
+                <%for(var i=0; i< contact_list.length;i++){ %> 
+                    <li>
+                        <div class="detail"> <%= contact_list[i].name %> <div> <%= contact_list[i].phone %> </div></div>
+                        <div class="buttons">
+                            <a href="/delete-contact-query/?phone=<%=contact_list[i].phone%>&name=<%=contact_list[i].name%>&id=<%= contact_list[i]._id %>">Delete Query</a>
+                            <a href="/delete-contact-params/<%= contact_list[i].phone %>/<%= contact_list[i].name %>/<%= contact_list[i]._id %>">Delete Params</a>
+                        </div>
+                    </li>
+                <% } %> 
+            </ul>
+
+            <form action="/create-contact" method="POST">
+                <input type="text" placeholder="Name" name="name" required>
+                <br>
+                <input type="number" placeholder="Phone Number" name="phone" required>
+                <br>
+                <button type="submit">Add Contact</button>
+            </form>
+        </div>
+        <script type="text/javascript" src="js/script.js"></script>
+    </body>
+</html>

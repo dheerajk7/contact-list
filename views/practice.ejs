@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title><%= title%></title>
+    </head>
+    <body>
+        <h1>Practice section</h1>
+        <ol>
+            <!-- for loop -->
+            <% for(let i=0;i<10;i++){%>
+                <li>
+                    <h1> <%= i %> </h1>
+                </li>
+            <% } %>
+        </ol>
+
+        <!-- if else -->
+        <!-- locals is same as direclty accessing condition as all variable are copied in locals{} object that we can access both ways -->
+        <% if (locals.condition){ %>        
+            <h1>Its true!:(</h1>    
+        <% } else {%>
+        <h1>Its False ! :)</h1>
+        <% } %>
+
+        <ul>
+            <!-- while loop -->
+            <% var i = 10;%>
+            <% while(i<20){ %> 
+                <li><h1> <%= i %></h1></li>
+                <% i = i + 1; %>
+            <% } %>
+        </ul>
+    </body>
+</html>
